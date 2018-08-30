@@ -10,7 +10,8 @@ USE burgers_db;
      * **devoured**: a boolean.*/
 
 CREATE TABLE burgers(
-id INTEGER AUTO_INCREMENT PRIMARY KEY,
+id INTEGER AUTO_INCREMENT,
 burger_name VARCHAR(50),
 devoured BOOLEAN,
-date TIMESTAMP);
+date TIMESTAMP,
+PRIMARY KEY (id));
