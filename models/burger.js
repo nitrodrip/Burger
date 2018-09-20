@@ -23,7 +23,6 @@ var burger = {
       callback(res);
     });
   }
-
 };
 
 // Export at the end of the burger.js file.

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VladKondrachuk</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<body>
+        <container class="container">
+                <!--Header-->
+                <form action="/action_page.php">
+                <div class="nameBanner">
+                        <h1>
+                                
+                                        Name:
+                                        <input type="text" name="charachter_name" value="" id="character_Name">
+                                     
+                                
+
+
+                        </h1>
+                    </div>
+                <!--Article-->
+                    <article>
+                            
+                        <!--Image Row 1-->
+                        <div class="card" id="character1_card">
+                                <img src="" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                  <h4><b>Character 1</b></h4> 
+                                  <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option"> <p>Warrior</p> </div>
+                                </div>
+                              </div>
+                            
+
+                        <!--Image Row 2-->
+                        <div class="card" id="character2_card">
+                                <img src="" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                  <h4><b>Character 2</b></h4> 
+                                  <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option"> <p>Witch</p> </div>
+                                </div>
+                              </div>
+                                     
+                        <!--Image Row 3-->
+                        <div class="card" id="character3_card">
+                                <img src="" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                  <h4><b>Character 3</b></h4> 
+                                  <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option"> <p>Wizzard</p> </div>
+                                </div>
+                              </div>
+                        
+                         <!--Image Row 4-->
+                         <div class="card" id="character4_card">
+                                <img src="" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                  <h4><b>Character 4</b></h4> 
+                                  <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option"><p>Knight</p> </div>
+                                </div>
+                              </div>
+
+
+                        <!--Skills Dashboard-->
+                        <span id="skillPointsRemaining">#</span>
+                        <span id="AttackStat">#</span>
+                        <span id="HealthStat">#</span>
+                        <span id="DefenseStat">#</span>
+                        <h3>Attack</h3> 
+                        
+                                <button type="button" class="btn btn-default btn-sm" id="attackPlus">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+
+                                <button type="button" class="btn btn-default btn-sm" id="attackMinus">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                        <h3>Health</h3>
+                                <button type="button" class="btn btn-default btn-sm" id="healthPlus">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+
+                                <button type="button" class="btn btn-default btn-sm"  id="healthMinus">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                        <h3>Defense</h3>
+                                <button type="button" class="btn btn-default btn-sm" id="defensePlus">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+
+                                <button type="button" class="btn btn-default btn-sm" id="defenseMinus">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                        
+                        
+                        <br><input type="submit" id="character_SubmitBtn" value="Submit">
+                        </form>
+
+                </container>
+
+                        <!--Footer-->      
+                <footer>
+                        <div id="Copydiv">
+                                <h2 id="copyright">Copyright &copy;</h2>
+                            </div>
+                
+                </footer>
+
+
+                <script>
+
+                        // VARIABLES
+                        // ==========================================================================
+                    
+                        // We start the game with a score of 0.
+                        var skillPointsRemaining = 20;
+                        // Variable to hold the index of current question.
+                        var AttackSkillPoints = 0;
+                        var HitSkillPoints = 0;
+                        var DefenseSkillPoints = 0;
+                    
+                        // FUNCTIONS
+                        // ==============================================================================
+                      
+                    
+                        // Function that updates the remaining skillPoints...
+                        function updateRemainingSkillPoints() {
+                          document.querySelector("#skillPointsRemaining").innerHTML = "Skill Points: " + skillPointsRemaining;
+                        }
+                    
+                    
+                        // MAIN PROCESS
+                        // ==============================================================================
+                    
+                        // Calling functions to start the game.
+                        updateRemainingSkillPoints();
+                    
+                        // When the user presses a key, it will run the following function...
+                        $("#attackPlus").click(function(){
+                                AttackSkillPoints++;
+                                skillPointsRemaining--;
+                                updateRemainingSkillPoints();
+                                document.querySelector("#AttackStat").innerHTML = "Attack Points: " + AttackSkillPoints;
+                                console.log(AttackSkillPoints);
+
+                                });
+                        
+                        $("#attackMinus").click(function(){
+                                AttackSkillPoints--;
+                                skillPointsRemaining++;
+                                updateRemainingSkillPoints();
+                                document.querySelector("#AttackStat").innerHTML = "Attack Points: " + AttackSkillPoints;
+                                console.log(AttackSkillPoints);
+
+                                });
+                        
+                        $("#healthPlus").click(function(){
+                                HitSkillPoints++;
+                                skillPointsRemaining--;
+                                updateRemainingSkillPoints();
+                                document.querySelector("#HealthStat").innerHTML = "Health Points: " + HitSkillPoints;
+                                console.log(HitSkillPoints);
+
+                                });
+
+                         $("#healthMinus").click(function(){
+                                HitSkillPoints--;
+                                skillPointsRemaining++;
+                                updateRemainingSkillPoints();
+                                document.querySelector("#HealthStat").innerHTML = "Health Points: " + HitSkillPoints;
+                                console.log(HitSkillPoints);
+
+                                });
+
+                          $("#defensePlus").click(function(){
+                                DefenseSkillPoints++;
+                                skillPointsRemaining--;
+                                updateRemainingSkillPoints();
+                                document.querySelector("#DefenseStat").innerHTML = "Defense Points: " + DefenseSkillPoints;
+                                console.log(DefenseSkillPoints);
+
+                                });
+                        
+                        $("#defenseMinus").click(function(){
+                                DefenseSkillPoints--;
+                                skillPointsRemaining++;
+                                updateRemainingSkillPoints();
+                                document.querySelector("#DefenseStat").innerHTML = "Defense Points: " + DefenseSkillPoints;
+                                console.log(DefenseSkillPoints);
+
+                                });
+                    
+                    
+                       
+                    
+                      </script>
+
+</body>
+</html>
