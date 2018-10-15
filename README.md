@@ -1,4 +1,4 @@
 # Burger
-Eat-Da-Burger App Homework
+Burger App Homework
 
-https://whispering-caverns-60924.herokuapp.com/
+https://shanes-burger-app.herokuapp.com/
